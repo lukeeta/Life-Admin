@@ -1,0 +1,110 @@
+body{
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    background: var(--color-primary);
+}
+.form-content {
+    background: var(--color-white);
+    border-bottom: .5px solid var(--color-gray-light);
+    box-shadow: 0 0 15px -5px rgba(0,0,0,.05);
+}
+form#formNote {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+}
+form#formNote .inputGroup{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+form#formNote .inputGroup textarea{
+    appearance: none;
+    outline: none;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #c7c7c7;
+    width: 100%;
+    margin-top: 15px;
+}
+form#formNote .inputGroup small{
+    font-size: 12px;
+}
+form#formNote button{
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    max-width: 250px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: var(--color-secundary);
+    color: var(--color-text-button-primary);
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: background .2s ease-in-out;
+}
+form#formNote button:hover{
+    background: var(--color-primary);
+}
+/* Dailys */
+.dailys{
+    margin-top: 3rem;
+}
+.single_daily{
+    position: relative;
+    background: var(--color-white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 18px -10px rgba(0,0,0,.5);
+    margin-bottom: .5rem;
+}
+.single_daily .buttons{
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    z-index: 1;
+    display: flex;
+}
+.single_daily .buttons > div{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: .2s ease-in-out;
+}
+.single_daily:hover .buttons > div{
+    opacity: 1;
+}
+.single_daily .buttons #favoriteDaily{
+    background: var(--color-yellow);
+    margin-right: 10px;
+}
+.single_daily .buttons #favoriteDaily.enabled{
+    opacity: 1!important;
+}
+.single_daily .buttons #removeDaily{
+    background: var(--color-red);
+}
+.single_daily .buttons > div img{
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    opacity: 0.5;
+    transition: .2s ease-in-out;
+}
+.single_daily .buttons > div:hover img{
+    opacity: 1;
+}
+.single_daily .date{
+    padding: 10px 20px;
+    border-bottom: 1px dashed var(--color-gray-light);
+}
+.single_daily .note{
+    padding: 10px  20px;
+}

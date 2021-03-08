@@ -1,0 +1,31 @@
+:root{
+
+    --color-primary: #5adb96;
+    --color-secundary: #db5a5a;
+    --color-yellow: #ebda60;
+    --color-red: #cf3c3c;
+
+    --color-text: #383838;
+    --color-text-button-primary: #fff;
+
+    --color-white: #fff;
+    --color-gray-light:#cfcfcf;
+
+    --font-primary: 'Montserrat', serif;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 90vw;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+body{
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    background: var(--color-white);
+}

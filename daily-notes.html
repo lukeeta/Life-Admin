@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Notes</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/pages/daily-notes.css">
+</head>
+<body>
+    
+    <div class="form-content">
+        <form action="" id="formNote" class="container">
+            <div class="inputGroup">
+                <p>Faça sua anotação de hoje...</p>
+                <textarea id="note" cols="30" rows="10">Querido diário... </textarea>
+                <small>Abra seu coração e diga tudo oque você sente</small>
+            </div>
+            <button type="submit">Adicionar ao Diário</button>
+        </form>
+    </div>
+
+    <div class="dailys container" id="dailys">
+
+        <div class="single_daily">
+            <div class="buttons">
+                <div id="favoriteDaily">
+                    <img src="src/img/star-regular.svg" alt="">
+                </div>
+                <div id="removeDaily">
+                    <img src="src/img/times-solid.svg" alt="">
+                </div>
+            </div>
+            <div class="date">
+                <p>01 de março de 2020 - 13:38</p>
+            </div>
+            <div class="note">
+                <p>Eis que uma história começou! Um novo momento, um novo amor, uma nova união! Lucas e Laura.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="src/js/pages/daily-notes.js"></script>
+</body>
+</html>
