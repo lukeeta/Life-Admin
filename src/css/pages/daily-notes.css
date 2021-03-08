@@ -1,12 +1,19 @@
 body{
     font-family: var(--font-primary);
     color: var(--color-text);
-    background: var(--color-primary);
+    background: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .form-content {
-    background: var(--color-white);
-    border-bottom: .5px solid var(--color-gray-light);
-    box-shadow: 0 0 15px -5px rgba(0,0,0,.05);
+    background-color: rgba(255,255,255,0.20);
+    box-shadow: 0 8px 32px 0 rgba(31,38,125,0.37);
+    backdrop-filter: blur(4.0px);
+    -webkit-backdrop-filter: blur(4.0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    margin-top: 75px;
 }
 form#formNote {
     display: flex;
@@ -18,17 +25,26 @@ form#formNote .inputGroup{
     display: flex;
     flex-direction: column;
 }
+form#formNote .inputGroup p{
+    color: var(--color-white);
+}
 form#formNote .inputGroup textarea{
     appearance: none;
     outline: none;
-    padding: 10px;
+    padding: 20px;
+    border-radius: 10px;
     font-size: 14px;
-    border: 1px solid #c7c7c7;
+    border: 1px solid rgba(255,255,255,0.20);    
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    background: inherit;
     width: 100%;
     margin-top: 15px;
 }
 form#formNote .inputGroup small{
     font-size: 12px;
+    margin-top: 10px;
+    color: rgba(255,255,255,0.7);
 }
 form#formNote button{
     appearance: none;
@@ -46,7 +62,7 @@ form#formNote button{
     transition: background .2s ease-in-out;
 }
 form#formNote button:hover{
-    background: var(--color-primary);
+    background: var(--color-primary-dark);
 }
 /* Dailys */
 .dailys{
@@ -54,11 +70,11 @@ form#formNote button:hover{
 }
 .single_daily{
     position: relative;
-    background: var(--color-white);
     padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 18px -10px rgba(0,0,0,.5);
     margin-bottom: .5rem;
+    background: rgba(255,255,255,0.40);
+    border-radius: 10px;
+    color: var(--color-white);
 }
 .single_daily .buttons{
     position: absolute;
@@ -82,14 +98,14 @@ form#formNote button:hover{
     opacity: 1;
 }
 .single_daily .buttons #favoriteDaily{
-    background: var(--color-yellow);
+    background: #fcbb43;
     margin-right: 10px;
 }
 .single_daily .buttons #favoriteDaily.enabled{
     opacity: 1!important;
 }
 .single_daily .buttons #removeDaily{
-    background: var(--color-red);
+    background: #fc4343;
 }
 .single_daily .buttons > div img{
     width: 25px;
@@ -97,13 +113,14 @@ form#formNote button:hover{
     object-fit: contain;
     opacity: 0.5;
     transition: .2s ease-in-out;
+    filter: invert(1);
 }
 .single_daily .buttons > div:hover img{
     opacity: 1;
 }
 .single_daily .date{
     padding: 10px 20px;
-    border-bottom: 1px dashed var(--color-gray-light);
+    border-bottom: 1px solid rgba(255,255,255,0.20);
 }
 .single_daily .note{
     padding: 10px  20px;

@@ -1,15 +1,17 @@
 :root{
 
-    --color-primary: #5adb96;
-    --color-secundary: #db5a5a;
-    --color-yellow: #ebda60;
-    --color-red: #cf3c3c;
+    --color-primary: #b86afc;
+    --color-primary-dark: #7c36b9;
+
+    --color-secundary: #FE5ECE;
 
     --color-text: #383838;
     --color-text-button-primary: #fff;
 
     --color-white: #fff;
     --color-gray-light:#cfcfcf;
+
+    --color-background:linear-gradient(to right, #8e2de2, #4a00e0);
 
     --font-primary: 'Montserrat', serif;
 
@@ -28,4 +30,23 @@ body{
     font-family: var(--font-primary);
     color: var(--color-text);
     background: var(--color-white);
+}
+#backButton{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: rgba(255,255,255,0.20);
+    box-shadow: 0 8px 32px 0 rgba(31,38,125,0.37);
+    backdrop-filter: blur(4.0px);
+    -webkit-backdrop-filter: blur(4.0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    z-index: 99;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: background-color .2s ease-in-out;
+}
+#backButton:hover{
+    background-color: rgba(0,0,0,0.5);
 }
