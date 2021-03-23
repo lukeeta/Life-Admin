@@ -1,0 +1,129 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.calculator{
+    background-color: rgba(255,255,255,0.20);
+    box-shadow: 0 8px 32px 0 rgba(31,38,125,0.37);
+    backdrop-filter: blur(4.0px);
+    -webkit-backdrop-filter: blur(4.0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 25px;
+    width: 95%;
+    max-width: 450px;
+    max-height: 700px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.calculator .amount{
+    background: var(--color-white);
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.calculator .amount h1{
+    color: var(--color-primary-dark);
+    font-size: 48px;
+    margin: 0;
+}
+.calculator .amount h1.positive{
+    color: var(--color-green)!important;
+}
+.calculator .amount h1.negative{
+    color: var(--color-red)!important;
+}
+.calculator .transitions{
+    max-height: 100%;
+    width: 100%;
+}
+.calculator .transitions .card_transition{
+    width: 50%;
+    background: var(--color-white);
+    border-radius: 0 5px 5px 5px;
+    margin: 10px 0;
+    padding: 10px 20px;
+    position: relative;
+    border-right: 5px solid var(--color-green);
+}
+.calculator .transitions .card_transition::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -15px;
+    border-top: 0px solid transparent;
+    border-bottom: 15px solid transparent;
+    
+    border-right: 15px solid var(--color-white);
+}
+.calculator .transitions .card_transition.negative{
+    margin-left: auto;
+    border-radius: 5px 0 5px 5px!important;
+    border-right: none;
+    border-left: 5px solid var(--color-red);
+}
+.calculator .transitions .card_transition.negative::before{
+    display: none;
+}
+.calculator .transitions .card_transition.negative::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -15px;
+    border-top: 0px solid transparent;
+    border-bottom: 15px solid transparent;
+
+    border-left: 15px solid var(--color-white);
+}
+.calculator .new_transition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+}
+.calculator .new_transition > div{
+    flex: 1;
+    background: var(--color-white);
+    margin: 10px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    border-radius: 5px;
+    color: rgba(0,0,0,.75);
+    cursor: pointer;
+    transition: opacity .2s ease-in-out;
+}
+.calculator .new_transition .entry{
+    background: var(--color-green);
+}
+.calculator .new_transition .exit{
+    background: var(--color-red);
+}
+.calculator .new_transition > div:hover{
+    opacity: 0.7;
+}
+
+.card_confirm{
+    background-color: rgba(255,255,255,0.20);
+    box-shadow: 0 8px 32px 0 rgba(31,38,125,0.37);
+    backdrop-filter: blur(4.0px);
+    -webkit-backdrop-filter: blur(4.0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    position: absolute;
+    padding: 10px 20px;
+}
+.card_confirm form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

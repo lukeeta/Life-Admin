@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wallet</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/pages/my-wallet.css">
+</head>
+<body>
+    <a href="index.html" id="backButton">Voltar para Home</a>
+    <div class="calculator">
+        <div class="amount">
+            <h1 id="current_amount">R$ 0,00</h1>
+        </div>
+        <div class="transitions">
+            <div class="card_transition positive">
+                <div class="transition_title">Salário</div>
+                <p>+ R$2.500,00</p>
+            </div>
+            <div class="card_transition negative">
+                <div class="transition_title">Computador</div>
+                <p>- R$456,00</p>
+            </div>
+        </div>
+        <div class="new_transition">
+            <div class="entry">+</div>
+            <div class="exit">-</div>
+        </div>
+    </div>
+    <div class="card_confirm entry_card">
+        <form id="entry_transition">
+            <input type="text" placeholder="+ 00,00">
+            <button type="submit">Adicionar Transação</button>
+        </form>
+    </div>
+    <div class="card_confirm exit_card">
+        <form id="exit_transition">
+            <input type="text" placeholder="- 00,00">
+            <button type="submit">Adicionar Transação</button>
+        </form>
+    </div>
+    <!-- JS -->
+    <script src="src/js/pages/wallet.js"></script>
+</body>
+</html>

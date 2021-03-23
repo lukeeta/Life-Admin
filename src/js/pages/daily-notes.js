@@ -10,7 +10,7 @@
             let postDate = dailyPostsExistents[singlePost].date;
             let postNote = dailyPostsExistents[singlePost].note;
 
-            const latestPost = createDailyPost(postNote, postDate);
+            const latestPost = createDailyPost(postNote, postDate, singlePost);
 
             document.getElementById('dailys').prepend(latestPost);
 
@@ -46,8 +46,30 @@ function removeDailyPost(){
     for(const post of posts){
         const removeButton = post.querySelector('#removeDaily');
         removeButton.addEventListener('click',()=>{
-            post.remove();
+            let deletePostConfirm = window.confirm('Tem certeza que deseja excluir esse dia? (Esses momentos são especiais... Pense duas vezes)')
+
+            if(deletePostConfirm === true){
+                let timestamp_post = post.getAttribute('timestamppost');
+                post.remove();
+                removeLocalStorage(timestamp_post)
+            }
         })
+    }
+
+    function removeLocalStorage(timestampPost){
+        if(timestampPost !== null){
+            let dailyPostsExistents = JSON.parse(localStorage.getItem('dailyPosts'));
+
+            for(const singlePost in dailyPostsExistents){
+                if (singlePost == timestampPost){
+                    delete dailyPostsExistents[timestampPost]
+                    break;
+                }
+            }
+
+            localStorage.setItem('dailyPosts', JSON.stringify(dailyPostsExistents))
+
+        }
     }
 
 }
@@ -77,7 +99,7 @@ function createButtons(){
 
 }
 
-function createDailyPost(note, date){
+function createDailyPost(note, date, timestamp){
 
     const div = document.createElement('div')
     const buttons = createButtons();
@@ -87,6 +109,7 @@ function createDailyPost(note, date){
     const noteParagraph = document.createElement('p')
 
     div.classList.add('single_daily')
+    div.setAttribute('timestampPost',`${timestamp}`)
     dateContent.classList.add('date')
     noteContent.classList.add('note')
     dateParagraph.innerHTML = date;
@@ -111,8 +134,10 @@ document.getElementById('formNote').addEventListener('submit',e => {
     const months = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
     let dailyDate = `${date.getDate()} de ${months[date.getMonth()]} de ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
 
+    let timestamp = date.getTime();
+
     // Create Element
-    const dailyPost = createDailyPost(dailyNote, dailyDate);
+    const dailyPost = createDailyPost(dailyNote, dailyDate,timestamp);
 
     
 

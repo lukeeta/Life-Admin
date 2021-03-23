@@ -8,6 +8,9 @@
     --color-text: #383838;
     --color-text-button-primary: #fff;
 
+    --color-red:#ee3232;
+    --color-green: #32ee6a;
+
     --color-white: #fff;
     --color-gray-light: #cfcfcf;
 
@@ -30,9 +33,13 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-background);
     font-family: var(--font-primary);
     color: var(--color-text);
-    background: var(--color-white);
 }
 
 /* Back to Home Button Style */

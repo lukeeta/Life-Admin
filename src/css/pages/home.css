@@ -1,11 +1,6 @@
-body {
+body{
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #8e2de2, #4a00e0);
 }
 body p.copyright{
     position: absolute;
