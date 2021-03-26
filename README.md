@@ -23,7 +23,7 @@ git clone https://github.com/lukeeta/Life-Admin.git
 Execute o arquivo index.html
 ```
 
-## 👨🏾‍💻 Técnologias Usadas
+## 👨🏾‍💻 Tecnologias Usadas
 
 * Javascript
 * HTML
